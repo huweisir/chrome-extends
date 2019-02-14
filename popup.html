@@ -1,0 +1,73 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Getting Started Extension's Popup</title>
+  <style type="text/css">
+    body {
+      margin: 10px;
+      white-space: nowrap;
+    }
+
+    h1 {
+      font-size: 15px;
+    }
+
+    #container {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      margin-left: 2px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+  <script src="popup.js"></script>
+</head>
+
+<body>
+  <h3>梦幻小插件</h3>
+  <div id="container">
+    <button id="start" class="hidden">开始</button>
+    <button id="stop">停止</button>
+    <!-- <button id="continue" class="hidden">继续</button> -->
+  </div>
+  <div>
+    <laebl>输入时：</laebl>
+    <input type="number" id="datehour">
+    <laebl>输入分：</laebl>
+    <input type="number" id="datemin">
+    <laebl>输入秒：</laebl>
+    <input type="number" id="datesec">
+    <button id="save">保存</button>
+  </div>
+  <div>
+    <span>输入密码：</span><input type="text" id="password">
+    <button id="save">保存</button>
+  </div>
+  <div>
+    <span>刷新频率：</span><input type="text" id="times">
+    <button id="timessave">保存</button>
+  </div>
+</body>
+
+</html>

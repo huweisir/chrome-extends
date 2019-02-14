@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Getting started example",
+  "description": "This extension allows the user to get tickets.",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "https://*.163.com/*"
+  ],
+  "background": {
+    "pages": [
+      "popup.html"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.163.com/*"
+      ],
+      "js": [
+        "jquery.js",
+        "new.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
